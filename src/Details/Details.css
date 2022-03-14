@@ -1,0 +1,18 @@
+.price-box{
+    background-color: #DFF6FF;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.safe-box{
+    background-color: #DFF6FF;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.share-box{
+    padding: 25px;
+    border: 2px solid rgb(223, 223, 223);
+    border-radius: 15px;
+    margin-bottom: 20px;
+}

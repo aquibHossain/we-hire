@@ -1,23 +1,64 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './Pages/HomePart/Home/Home';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import About from './Pages/About/About';
+import AddCategories from './Pages/AdminPart/AddCategories/AddCategories';
+import NavBar from './Pages/Header/NavBar/NavBar';
+import Login from './Pages/Login/Login';
+import Register from './Pages/Register/Register';
+import AuthProvider from './Context/AuthProvider/AuthProvider';
+import Search from './Pages/Search/Search';
+import AddRent from './Pages/AddRent/AddRent';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import MakeAdmin from './Pages/AdminPart/MakeAdmin/MakeAdmin';
+import Details from './Details/Details';
+import Footer from './Footer/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <AuthProvider>
+        <Router>
+           <NavBar></NavBar>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About></About>
+          </Route>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+          <PrivateRoute path="/categories">
+            <AddCategories></AddCategories>
+          </PrivateRoute>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/register">
+            <Register></Register>
+          </Route>
+          <Route path="/search">
+            <Search></Search>
+          </Route>
+          <Route path="/details/:id">
+            <Details></Details>
+          </Route>
+          <PrivateRoute path="/addrent">
+            <AddRent></AddRent>
+          </PrivateRoute>
+          <PrivateRoute path="/makeadmin">
+            <MakeAdmin></MakeAdmin>
+          </PrivateRoute>
+        </Switch>
+        <Footer></Footer>
+    </Router>
+        </AuthProvider>
     </div>
   );
 }

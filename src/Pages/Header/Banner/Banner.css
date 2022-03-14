@@ -1,0 +1,19 @@
+.banner{
+    background:url('https://i.ibb.co/ByWqYLd/skyscrapers-gaee779f7c-1920-1.jpg');
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    
+}
+.search{
+    width: 50%;
+    border-radius: 20px;
+    padding: 1.5em;
+    left: 25%;
+    top: 25%;
+    position: sticky;
+    background-color: rgba(219, 219, 219, 0.814);
+   
+}
