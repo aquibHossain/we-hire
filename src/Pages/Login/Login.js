@@ -1,10 +1,10 @@
-import { Button, Container, Grid, TextField, Typography } from '@mui/material';
+import { Alert, Button, Container, Grid, TextField, Typography } from '@mui/material';
 import React, { useReducer, useState } from 'react';
 import { NavLink, useLocation,useHistory } from 'react-router-dom';
 import useAuth from '../../hook/useAuth';
 
 const Login = () => {
-  const {signInGoogle,signInUser,user}=useAuth()
+  const {signInGoogle,signInUser,user,error}=useAuth()
     const [loginData,setLoginData]=useState({});
     const history=useHistory();
     const location=useLocation();
@@ -41,7 +41,7 @@ const Login = () => {
           name='password'
           onBlur={handleOnChange}
           variant="standard" />
-       
+     {error && <Alert sx={{my:2,width:'75%',mx:'auto'}} severity="error">{error}</Alert>}
         <Button sx={{width:'50%',m:3,borderRadius:'20px'}}  type='submit' variant='contained'><img src="https://img.icons8.com/color/25/000000/login-rounded-right.png"/>Submit</Button>
         {!user.email && <NavLink to='/register'
           style={{textDecoration:"none"}}>

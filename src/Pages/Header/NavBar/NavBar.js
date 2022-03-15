@@ -47,6 +47,9 @@ const NavBar = () => {
       else if(name==='Categories'){
         history.push('/categories')
       }
+      else if(name==='Dashboard'){
+        history.push('/dashboard')
+      }
       else if(name==='Post Ad'){
         history.push('/addrent')
       }
@@ -60,7 +63,7 @@ const NavBar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
@@ -114,7 +117,7 @@ const NavBar = () => {
                 onClick={()=>{handleCloseNavMenu();
                   handleClick(page)}}
                
-                sx={{ my: 2, mr:3,color: 'white', display: 'block' }}
+                sx={{ my: 1, mr:3,color: 'white', display: 'block' }}
               >
                 <NavLink  style={{textDecoration:"none",color:'white'}} to={page}>{page}</NavLink>
               </Button>
@@ -124,7 +127,7 @@ const NavBar = () => {
           {
             user.email && <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton onClick={handleOpenUserMenu} >
                 <Avatar alt={user.displayName} src={user.photoURL} />
               </IconButton>
             </Tooltip>

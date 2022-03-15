@@ -17,6 +17,8 @@ import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import MakeAdmin from './Pages/AdminPart/MakeAdmin/MakeAdmin';
 import Details from './Details/Details';
 import Footer from './Footer/Footer';
+import Dashboard from './Dashboard/Dashboard';
+
 
 function App() {
   return (
@@ -27,9 +29,6 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
-          </Route>
-          <Route path="/about">
-            <About></About>
           </Route>
           <Route path="/home">
             <Home></Home>
@@ -46,14 +45,14 @@ function App() {
           <Route path="/search">
             <Search></Search>
           </Route>
+          <Route path="/dashboard">
+            <Dashboard></Dashboard>
+          </Route>
           <Route path="/details/:id">
             <Details></Details>
           </Route>
           <PrivateRoute path="/addrent">
             <AddRent></AddRent>
-          </PrivateRoute>
-          <PrivateRoute path="/makeadmin">
-            <MakeAdmin></MakeAdmin>
           </PrivateRoute>
         </Switch>
         <Footer></Footer>

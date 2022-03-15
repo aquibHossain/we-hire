@@ -15,6 +15,8 @@ import React, { useState } from "react";
 import SendIcon from "@mui/icons-material/Send";
 import useAuth from "../../hook/useAuth";
 import './AddREnt.css'
+import FileBase64 from 'react-file-base64';
+
 const AddRent = () => {
   const options = [
     "Apartment",
@@ -24,6 +26,17 @@ const AddRent = () => {
     "Commercial Space",
     "Farm House",
   ];
+  const area = [
+    "Barisal",
+    "Chittagong",
+    "Dhaka",
+    "Khulna",
+    "Mymensingh",
+    "Rajshahi",
+    "Rangpur",
+    "Sylhet",
+  ];
+  
   const { user } = useAuth();
   const [name, setName] = useState("");
   const [url, seturl] = useState("");
@@ -33,6 +46,7 @@ const AddRent = () => {
   const [number, setnumber] = useState("");
   const [price, setprice] = useState(0);
   const [category, setCategory] = React.useState(options[0]);
+  const [areas, setAreas] = React.useState(area[0]);
 
   const nameRef = (e) => {
     setName(e.target.value);
@@ -58,6 +72,9 @@ const AddRent = () => {
   const handleChange = (event) => {
     setCategory(event.target.value);
   };
+  const handleChangeD = (event) => {
+    setAreas(event.target.value);
+  };
   const handleSubmit = (e) => {
     const newCategory = {
       name,
@@ -68,6 +85,8 @@ const AddRent = () => {
       pubName,
       number,
       category,
+      areas,
+      pubPic:user.photoURL
     };
     console.log(newCategory);
     fetch("http://localhost:5000/addrent", {
@@ -85,41 +104,58 @@ const AddRent = () => {
         }
         console.log(data);
       });
+      e.preventDefault()
   };
-
+  const appointmentBg={
+    background:`url("https://i.ibb.co/GHqrm9q/kissclipart-white-house-silhouette-png-clipart-united-states-c-28b232a3bcc28922.png")`,
+    backgroundRepeat:"no-repeat",
+    backgroundSize:"cover",
+    backgroundPosition:"center",
+    
+}
   return (
-    <div className="back">
-      <Container sx={{ p: 10 }}>
+    <div style={appointmentBg}>
+      <Container sx={{p:9}}>
         <Typography
-          variant="h2"
-          sx={{ color: "white", fontWeight: "bold", mb: 10 }}
+          variant="h1"
+          sx={{fontFamily:'initial', fontWeight: "bold", mb: 10,backgroundColor:'white',p:2}}
         >
           Post Ad
         </Typography>
 
-        <form action="">
+        <form action="" onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} md={6} sm={6}>
+            <Typography
+          variant='h6'
+          sx={{mb:3}}
+        >
+          Personal information
+        </Typography>
               <TextField
                 sx={{ width: "50%", mb: 3 }}
                 onChange={pubNameRef}
                 id="st"
+                className="b"
                 label="Publisher Name"
                 value={pubName}
+                variant="filled"
+                
               />
               <br></br>
               <TextField
                 sx={{ width: "50%" }}
                 id="stan"
                 onChange={numberRef}
+                variant="filled"
+                className="b"
+                type='number'
                 label="Phone"
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">+880</InputAdornment>
                   ),
                 }}
-                inputProps={{ style: { color: "white" } }}
-               
               />
               <br />
             </Grid>
@@ -128,46 +164,26 @@ const AddRent = () => {
               xs={12}
               md={6}
               sm={6}
-              className='b'
-              sx={{ border: 1, p: 4, borderColor: "grey.500", borderRadius: 5 }}
+              className='back'
+              sx={{ p: 4,  borderRadius: 5 }}
             >
               <TextField
+              required
                 sx={{ width: "50%", mb: 3 }}
                 onChange={nameRef}
                 id="standard-basic"
                 label="Name"
                 variant="standard"
               />
-              <br></br>
-              <TextField
-                sx={{ width: "50%", mb: 3 }}
-                id="standard"
-                label="Photo url"
-                variant="standard"
-              />
+              
+           
               <br />
-              <label htmlFor="icon-button-file">
-                <Input
-                  sx={{ width: "75%", mb: 3 }}
-                  onChange={urlRef}
-                  accept="image/*"
-                  id="icon-button-file"
-                  type="file"
-                />
-                <IconButton
-                  color="primary"
-                  aria-label="upload picture"
-                  component="span"
-                >
-                  <PhotoCamera />
-                </IconButton>
-              </label>
-              <br></br>
               <TextField
                 sx={{ width: "50%", mb: 3 }}
                 onChange={priceRef}
                 id="standar"
                 label="Price"
+                type='number'
                 variant="standard"
                 InputProps={{
                   startAdornment: (
@@ -177,16 +193,34 @@ const AddRent = () => {
               />
               <br></br>
               <TextField
+              required
                 id="standard-select-currency"
                 sx={{ width: "50%", mb: 3 }}
                 select
-                label="Select"
+                label="Category"
                 value={category}
                 onChange={handleChange}
-                helperText="Please select your category"
+               
                 variant="standard"
               >
                 {options.map((option) => (
+                  <MenuItem key={option} value={option}>
+                    {option}
+                  </MenuItem>
+                ))}
+              </TextField>
+              <br />
+              <TextField
+              required
+                id="standard-select-district"
+                sx={{ width: "50%", mb: 3 }}
+                select
+                label="District"
+                value={areas}
+                onChange={handleChangeD}
+                variant="standard"
+              >
+                {area.map((option) => (
                   <MenuItem key={option} value={option}>
                     {option}
                   </MenuItem>
@@ -202,24 +236,34 @@ const AddRent = () => {
               />
               <br></br>
               <TextField
-                sx={{ width: "50%", mb: 3 }}
+                sx={{ width: "50%", mb: 4 }}
                 id="standard-multiline-static"
                 label="Description"
                 multiline
                 rows={4}
                 variant="standard"
-                onClick={descriptionRef}
+                onChange={descriptionRef}
               />
+              <br></br>
+             
+              <label  htmlFor="icon-button-file">
+              <FileBase64
+        multiple={ false }
+        onDone={ ({base64})=>seturl(base64) }/>
+                <IconButton
+                  color="primary"
+                  aria-label="upload picture"
+                  component="span"
+                >
+                  <PhotoCamera />
+                </IconButton>
+              </label>
               <br></br>
               <Button
                 endIcon={<SendIcon />}
-                onClick={handleSubmit}
                 variant="contained"
-                style={{
-                  backgroundColor: "white",
-                  color: "black",
-                  marginTop: "25px",
-                }}
+                sx={{mt:3}}
+                type="submit"
               >
                 Submit
               </Button>

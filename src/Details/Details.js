@@ -22,7 +22,7 @@ const Details = () => {
                 
                 <Typography className='my-3 fw-bold' variant='h6'>Location:{details[0]?.location}</Typography>
                 <hr />
-                <Typography>{details[0]?.description}</Typography>
+                <Typography >{details[0]?.description}</Typography>
              </Grid>
              <Grid item xs={12} md={3} sm={4}>
                  <div className='price-box'>
@@ -34,12 +34,12 @@ const Details = () => {
                      
                      <Typography variant='h5' className='mb-2 fw-bold'>Contact Publisher</Typography>
                      <Avatar
-  alt="Remy Sharp"
-  src="/static/images/avatar/1.jpg"
+  alt={details[0]?.pubName}
+  src={details[0]?.pubPic||"/static/images/avatar/1.jpg"}
   sx={{ width: 65, height: 65,mx:'auto',my:2 }}
 />
-                     <Typography> Name: Anisur Rahman</Typography>
-                     <Typography>  Phone: 01316441902</Typography>
+                     <Typography> <span style={{fontWeight:'bold'}}>Name:</span> {details[0]?.pubName}</Typography>
+                     <Typography>  <span style={{fontWeight:'bold'}}>Phone:</span> +880{details[0]?.number}</Typography>
                     
                  </div>
                <div className='safe-box'>
@@ -54,7 +54,7 @@ const Details = () => {
               </ul>
                </div>
                <div  className='share-box'>
-                   <Typography variant='h5'>Share This</Typography>
+                   <Typography variant='h5' className='mb-2 fw-bold'>Share This</Typography>
                    <img  src="https://i.ibb.co/88HpTcx/icons8-facebook-48.png"/>
                    <img width={'25%'}  src="https://i.ibb.co/MMFqrc0/icons8-twitter.gif"/>
                    <img width={'25%'} src="https://i.ibb.co/jr7qjN6/icons8-instagram.gif"/>

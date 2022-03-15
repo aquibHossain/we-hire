@@ -4,10 +4,11 @@ import { useHistory } from 'react-router-dom';
 
 const SearchList = ({list}) => {
   const history=useHistory()
-    const {name,url,price,description,location,_id}=list
+    const {name,url,price,location,_id}=list
     const handleClick=(id)=>{
      history.push(`/details/${id}`)
     }
+    const reserve="https://i.ibb.co/1zbBh1f/pngwing-com-1.png";
     return (
         <div>
             <Grid  item xs={12} md={4} sm={6}>
@@ -17,7 +18,7 @@ const SearchList = ({list}) => {
         <CardMedia
           component="img"
           height="140"
-          image={url}
+          image={url||reserve}
           alt="green iguana"
           title={name}
         />
