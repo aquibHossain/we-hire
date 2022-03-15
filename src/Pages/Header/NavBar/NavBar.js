@@ -15,7 +15,7 @@ import { useHistory } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hook/useAuth';
 
-const pages = ['Home', 'Categories','Login'];
+const pages = ['Home', 'Rents','Login'];
 const settings = ['Profile','Post Ad', 'Dashboard', 'Logout'];
 const NavBar = () => {
   const {user,logOutUser}=useAuth()
@@ -44,8 +44,8 @@ const NavBar = () => {
       else if(name==='Login'){
         history.push('/login')
       }
-      else if(name==='Categories'){
-        history.push('/categories')
+      else if(name==='Rents'){
+        history.push('/search')
       }
       else if(name==='Dashboard'){
         history.push('/dashboard')

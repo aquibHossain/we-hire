@@ -9,10 +9,9 @@ const Footer = () => {
       <div className="container-fluid px-5">
         <div className="row py-5">
           <div className="col-sm-12 col-md-6 col-lg-3  text-center text-lg-start">
-            <h2 className="fw-bold text-danger">We Hire</h2>
+            <h1 className="fw-bold text-danger">We Hire</h1>
             <p className="lh-lg fw-light">
-              We make interiors infused with the spirit of contemporary design
-              and minimalist philosophies.
+            বাসা ভাড়া দেওয়া এবং বাসা ভাড়া খোঁজার একটি ডিজিটাল প্লাটফর্ম। 
             </p>
             <h4 className="mt-4">
               <i className="fab fa-facebook me-3"></i>

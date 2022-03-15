@@ -29,7 +29,7 @@ const AddCategories = () => {
         }
         console.log(data);
       });
-      e.preventDefault()
+    e.preventDefault();
   };
   return (
     <div>
@@ -37,31 +37,31 @@ const AddCategories = () => {
         Add Categories
       </Typography>
       <form action="" onSubmit={handleSubmit}>
-      <TextField
-        required
-        onChange={nameRef}
-        id="standard-basic"
-        label="Name"
-        variant="standard"
-        sx={{my:3}}
-      />
-      <br></br>
-      <TextField
-      required
-        onChange={urlRef}
-        id="standard"
-        label="Photo url"
-        variant="standard"
-        sx={{mb:3}}
-      />
-      <br></br>
-      <Button
-        variant="contained"
-        type="submit"
-        style={{ backgroundColor: "#5CE7ED" }}
-      >
-        Submit
-      </Button>
+        <TextField
+          required
+          onChange={nameRef}
+          id="standard-basic"
+          label="Name"
+          variant="standard"
+          sx={{ my: 3 }}
+        />
+        <br></br>
+        <TextField
+          required
+          onChange={urlRef}
+          id="standard"
+          label="Photo url"
+          variant="standard"
+          sx={{ mb: 3 }}
+        />
+        <br></br>
+        <Button
+          variant="contained"
+          type="submit"
+          style={{ backgroundColor: "#5CE7ED" }}
+        >
+          Submit
+        </Button>
       </form>
     </div>
   );

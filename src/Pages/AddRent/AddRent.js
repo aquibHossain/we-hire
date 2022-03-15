@@ -51,9 +51,6 @@ const AddRent = () => {
   const nameRef = (e) => {
     setName(e.target.value);
   };
-  const urlRef = (e) => {
-    seturl(e.target.value);
-  };
   const priceRef = (e) => {
     setprice(e.target.value);
   };

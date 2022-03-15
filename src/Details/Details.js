@@ -10,14 +10,14 @@ const Details = () => {
     .then(res=>res.json())
     .then(data=>{setdetails(data)})
    },[])
-   
+   const reserve="https://i.ibb.co/1zbBh1f/pngwing-com-1.png";
     return (
         <div>
        <Container sx={{mt:11}}>
        <Grid container spacing={5}>
         
              <Grid item xs={12} md={9} sm={8}>
-             <img width={'100%'} height={350} src={details[0]?.url} alt="" />
+             <img width={'100%'} height={350} src={details[0]?.url||reserve} alt="" />
                 <Typography className='mt-3 ' variant='h4'>{details[0]?.name}</Typography>
                 
                 <Typography className='my-3 fw-bold' variant='h6'>Location:{details[0]?.location}</Typography>

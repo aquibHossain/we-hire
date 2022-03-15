@@ -9,7 +9,7 @@ const Catergory = ({category}) => {
   console.log(name,url);
   const history=useHistory()
   const handleClick=(name)=>{
-   history.push(`/search`)
+   history.push(`/search/${name}`)
   }
     return (
         <div>

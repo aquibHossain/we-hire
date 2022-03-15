@@ -18,6 +18,7 @@ import MakeAdmin from './Pages/AdminPart/MakeAdmin/MakeAdmin';
 import Details from './Details/Details';
 import Footer from './Footer/Footer';
 import Dashboard from './Dashboard/Dashboard';
+import SearchCategory from './SearchCategory/SearchCategory';
 
 
 function App() {
@@ -33,17 +34,17 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          <PrivateRoute path="/categories">
-            <AddCategories></AddCategories>
-          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>
           <Route path="/register">
             <Register></Register>
           </Route>
-          <Route path="/search">
+          <Route exact path="/search">
             <Search></Search>
+          </Route>
+          <Route path="/search/:category">
+            <SearchCategory></SearchCategory>
           </Route>
           <Route path="/dashboard">
             <Dashboard></Dashboard>
