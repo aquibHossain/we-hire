@@ -68,7 +68,7 @@ const NavBar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            <NavLink to={'\home'} className='text-white text-decoration-none'>WE Hire</NavLink>
+            <NavLink to="/home" className='text-white text-decoration-none'>WE Hire</NavLink>
           </Typography>
 
           <Box  sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

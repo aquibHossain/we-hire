@@ -20,7 +20,7 @@ const About = () => {
     }
     return (
         <div>
-        <Box style={appointmentBg} sx={{ flexGrow: 1 }}>
+        <Box style={appointmentBg} sx={{ flexGrow: 1,my:10 }}>
  <Grid container spacing={2}>
    <Grid item xs={12} md={6}>
      <img

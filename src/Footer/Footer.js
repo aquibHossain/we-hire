@@ -3,7 +3,6 @@ import React from "react";
 const Footer = () => {
   return (
     <div
-      className="mt-5 "
       style={{ backgroundColor: "#09344dc2", color: "white" }}
     >
       <div className="container-fluid px-5">
@@ -28,8 +27,8 @@ const Footer = () => {
               <br />
               Baltimore,Khulna,Bangladesh.
               <br />
-              <i class="fas fa-phone-alt"></i> +880-1982690790 <br />{" "}
-              <i class="far fa-envelope"></i> hossainaquib20@gmail.com
+              <i className="fas fa-phone-alt"></i> +880-1982690790 <br />{" "}
+              <i className="far fa-envelope"></i> hossainaquib20@gmail.com
             </p>
           </div>
 

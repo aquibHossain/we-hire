@@ -10,10 +10,10 @@ const Home = () => {
     return (
         <div>
             <HeaderPart></HeaderPart>
-            <Typography variant='h3' sx={{my:7}} style={{color:"#2b7377",fontWeight:'bold'}}>Catergories</Typography>
+            <Typography variant='h3' className='div' sx={{mt:15,mb:5,mx:'auto'}} style={{color:"#2b7377",fontWeight:'bold'}}>Catergories</Typography>
            <Categories></Categories>
            
-           <Typography sx={{p:5,backgroundColor:'#DFF6FF',my:7}}>
+           <Typography sx={{p:5,backgroundColor:'#DFF6FF',my:15}}>
            We Hire ডিজিটাল প্লাটফর্ম সম্পর্কে
 We Hire বাসা ভাড়া দেওয়া এবং বাসা ভাড়া খোঁজার একটি ডিজিটাল প্লাটফর্ম। We Hire ওয়েবসাইট এবং অ্যাপ এর মাধ্যমে আপনি কয়েক মিনিটেই দিয়ে দিতে পারেন আপনার বাসা ভাড়ার বিজ্ঞাপন অথবা আপনি যদি ভাড়াটিয়া হয়ে থাকেন তাহলে খুঁজে পেতে পারেন আপনার পছন্দের বাসা।
 <br />

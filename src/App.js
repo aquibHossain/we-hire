@@ -19,6 +19,7 @@ import Details from './Details/Details';
 import Footer from './Footer/Footer';
 import Dashboard from './Dashboard/Dashboard';
 import SearchCategory from './SearchCategory/SearchCategory';
+import Find from './Find/Find';
 
 
 function App() {
@@ -46,12 +47,15 @@ function App() {
           <Route path="/search/:category">
             <SearchCategory></SearchCategory>
           </Route>
+          <Route path="/find">
+            <Find></Find>
+          </Route>
           <Route path="/dashboard">
             <Dashboard></Dashboard>
           </Route>
-          <Route path="/details/:id">
+          <PrivateRoute path="/details/:id">
             <Details></Details>
-          </Route>
+          </PrivateRoute >
           <PrivateRoute path="/addrent">
             <AddRent></AddRent>
           </PrivateRoute>

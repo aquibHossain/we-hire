@@ -115,7 +115,7 @@ const AddRent = () => {
       <Container sx={{p:9}}>
         <Typography
           variant="h1"
-          sx={{fontFamily:'initial', fontWeight: "bold", mb: 10,backgroundColor:'white',p:2}}
+          sx={{fontFamily:'initial', fontWeight: "bold", mb: 10,backgroundColor:'white',p:2,color:"#2b7377" }}
         >
           Post Ad
         </Typography>

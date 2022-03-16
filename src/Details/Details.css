@@ -16,3 +16,17 @@
     border-radius: 15px;
     margin-bottom: 20px;
 }
+.div {
+    width   : 50%; 
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.div::before {
+    content : "";
+    position: absolute;
+    left    : 30;
+    bottom  : 0;
+    width   : 25%;
+    border-bottom: 2px solid rgb(62, 255, 245);
+}
