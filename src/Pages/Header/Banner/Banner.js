@@ -42,7 +42,7 @@ const Banner = () => {
   const searchRef = (e) => {
     setSearch(e.target.value);
   };
- 
+  
   const handleSearch = (e) => {
     const data={search,min,max,category:value,areas:value1}
     history.push({pathname:'/find',state:data})
