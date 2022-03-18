@@ -25,13 +25,13 @@ const Register = () => {
         e.preventDefault()
     }
     return (
-        <Container sx={{mt:11}}>
+        <Container sx={{mt:11,height:'100vh'}}>
         <Grid container spacing={2}>
         <Grid item xs={12} sm={6} md={6} >
-    <img src='https://i.ibb.co/0FGg3v8/kindpng-390853.png' style={{width:"100%",height:"100%"}} alt="" />
+    <img src='https://i.ibb.co/jhhf7Rx/house-rent-17281880.jpg' style={{width:"100%",height:"100%"}} alt="" />
     </Grid>
     <Grid item xs={12} sm={6} md={6} sx={{mt:3}}>
-    <Typography style={{color:"skyblue",fontWeight:'bolder',fontSize:'40px'}}  variant='body1' gutterBottom> Register</Typography>
+    <Typography style={{color:"#2b7377",fontWeight:'bolder'}}  variant='h2' gutterBottom> Register</Typography>
     {!isLoading && <form onSubmit={handleSubmit}>
     <TextField sx={{width:'75%',m:1}}
          id="standard-basic"
@@ -61,7 +61,8 @@ const Register = () => {
       onBlur={handleOnChange}
       variant="standard" />
       
-    <Button  sx={{width:'75%',m:2,borderRadius:'20px'}}  type='submit' variant='contained'>Register</Button>
+    <Button  sx={{width:'50%',mt:4,mb:2,borderRadius:'20px',backgroundColor:'#2b7377'}}  type='submit' variant='contained'>Register</Button>
+    <br />
     <NavLink to='/login'
       style={{textDecoration:"none"}}>
       <Button  variant="text">Already Registered? Please Login</Button>

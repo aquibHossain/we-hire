@@ -63,7 +63,7 @@ const Banner = () => {
               ></TextField>
             </Grid>
             <Grid item xs={3} md={3} sm={3}>
-              <Button type="submit" sx={{ width: "100%" }} variant="contained">
+              <Button type="submit" sx={{ width: "100%",backgroundColor:'#09344dc2' }} variant="contained">
                 Search
               </Button>
             </Grid>

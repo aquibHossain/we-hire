@@ -16,7 +16,7 @@ import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hook/useAuth';
 
 const pages = ['Home', 'Rents','Login'];
-const settings = ['Profile','Post Ad', 'Dashboard', 'Logout'];
+const settings = [ 'Dashboard','Post Ad', 'Logout'];
 const NavBar = () => {
   const {user,logOutUser}=useAuth()
   const history=useHistory()

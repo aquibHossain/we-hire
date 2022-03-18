@@ -21,10 +21,10 @@ const Login = () => {
         e.preventDefault()
     }
     return (
-      <Container sx={{mt:11}}>
+      <Container sx={{mt:11,height:'100vh'}}>
             <Grid container spacing={2}>
         <Grid  item xs={12} sm={6} md={6} sx={{mt:6}}>
-        <Typography style={{color:"#5D8BF4",fontWeight:'bolder',fontSize:'40px',textShadow:'7px 5px 2px #DFF6FF'}} variant='body1' gutterBottom> Login</Typography>
+        <Typography style={{color:"#2b7377",fontWeight:'bolder'}} variant='h2' gutterBottom> Login</Typography>
         <form  onSubmit={handleSubmit}>
        
         <TextField sx={{width:'75%',m:1}}
@@ -42,7 +42,8 @@ const Login = () => {
           onBlur={handleOnChange}
           variant="standard" />
      {error && <Alert sx={{my:2,width:'75%',mx:'auto'}} severity="error">{error}</Alert>}
-        <Button sx={{width:'50%',m:3,borderRadius:'20px'}}  type='submit' variant='contained'><img src="https://img.icons8.com/color/25/000000/login-rounded-right.png"/>Submit</Button>
+        <Button sx={{width:'50%',mt:4,mb:2,borderRadius:'20px',backgroundColor:'#2b7377'}}  type='submit' variant='contained'><img src="https://img.icons8.com/color/25/000000/login-rounded-right.png"/>Submit</Button>
+        <br />
         {!user.email && <NavLink to='/register'
           style={{textDecoration:"none"}}>
           <Button sx={{width:'50%',mb:2}}  variant="text">New User ? Please Register</Button>

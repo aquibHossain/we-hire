@@ -15,19 +15,16 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import {
     Switch,
     Route,
     useRouteMatch
   } from "react-router-dom";
-import { Button } from '@mui/material';
-import { NavLink } from 'react-router-dom';
 import AddCategories from '../Pages/AdminPart/AddCategories/AddCategories';
 import MakeAdmin from '../Pages/AdminPart/MakeAdmin/MakeAdmin';
 import AdminRoute from '../Pages/AdminPart/AdminRoute/AdminRoute';
 import { useHistory } from 'react-router-dom';
+import TableDashboard from '../TableDashboard/TableDashboard';
 
 const drawerWidth = 240;
 
@@ -142,7 +139,7 @@ const Dashboard = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Admin Panel
+            Dashboard
           </Typography>
         </Toolbar>
       </AppBar>
@@ -186,9 +183,10 @@ const Dashboard = () => {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
+
         <Switch>
         <Route exact path={path}>
-          <h3>Please select a topic.</h3>
+          <TableDashboard></TableDashboard>
         </Route>
         <AdminRoute path={`${path}/addcategories`}>            
             <AddCategories></AddCategories>

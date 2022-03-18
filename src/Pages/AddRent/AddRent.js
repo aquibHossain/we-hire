@@ -4,10 +4,8 @@ import {
   Container,
   Grid,
   IconButton,
-  Input,
   InputAdornment,
   MenuItem,
-  TextareaAutosize,
   TextField,
   Typography,
 } from "@mui/material";
@@ -83,7 +81,8 @@ const AddRent = () => {
       number,
       category,
       areas,
-      pubPic:user.photoURL
+      pubPic:user.photoURL,
+      email:user.email
     };
     console.log(newCategory);
     fetch("http://localhost:5000/addrent", {
@@ -104,10 +103,9 @@ const AddRent = () => {
       e.preventDefault()
   };
   const appointmentBg={
-    background:`url("https://i.ibb.co/GHqrm9q/kissclipart-white-house-silhouette-png-clipart-united-states-c-28b232a3bcc28922.png")`,
+    background:`url("https://i.ibb.co/njv6CD6/wallpaperflare-com-wallpaper-1.jpg")`,
     backgroundRepeat:"no-repeat",
     backgroundSize:"cover",
-    backgroundPosition:"center",
     
 }
   return (
@@ -115,20 +113,22 @@ const AddRent = () => {
       <Container sx={{p:9}}>
         <Typography
           variant="h1"
-          sx={{fontFamily:'initial', fontWeight: "bold", mb: 10,backgroundColor:'white',p:2,color:"#2b7377" }}
+          className='div mx-auto'
+          sx={{fontFamily:'initial', fontWeight: "bold", mb:10,color:"#2b7377" }}
         >
           Post Ad
         </Typography>
 
         <form action="" onSubmit={handleSubmit}>
           <Grid container spacing={2}>
-            <Grid item xs={12} md={6} sm={6}>
+            <Grid sx={{mb:3}} item xs={12} md={6} sm={6}>
             <Typography
-          variant='h6'
-          sx={{mb:3}}
+          variant='h5'
+          sx={{mb:2,fontWeight:'bold'}}
         >
           Personal information
         </Typography>
+        <br />
               <TextField
                 sx={{ width: "50%", mb: 3 }}
                 onChange={pubNameRef}
@@ -161,7 +161,7 @@ const AddRent = () => {
               xs={12}
               md={6}
               sm={6}
-              className='back'
+              className='back shadow-lg'
               sx={{ p: 4,  borderRadius: 5 }}
             >
               <TextField
@@ -259,7 +259,7 @@ const AddRent = () => {
               <Button
                 endIcon={<SendIcon />}
                 variant="contained"
-                sx={{mt:3}}
+                sx={{mt:3,backgroundColor:'#2b7377'}}
                 type="submit"
               >
                 Submit

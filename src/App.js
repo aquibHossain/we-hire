@@ -20,6 +20,7 @@ import Footer from './Footer/Footer';
 import Dashboard from './Dashboard/Dashboard';
 import SearchCategory from './SearchCategory/SearchCategory';
 import Find from './Find/Find';
+import UpdateRent from './UpdateRent/UpdateRent';
 
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
           <PrivateRoute path="/details/:id">
             <Details></Details>
           </PrivateRoute >
+         
           <PrivateRoute path="/addrent">
             <AddRent></AddRent>
           </PrivateRoute>
