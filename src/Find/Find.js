@@ -2,6 +2,7 @@ import { CircularProgress, Container, Grid, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import SearchList from "../Pages/SearchList/SearchList";
 import { useLocation } from "react-router-dom";
+import Footer from "../Footer/Footer";
 const Find = () => {
   const { state } = useLocation();
   const { search, min, max, category, areas } = state;
@@ -19,6 +20,7 @@ const Find = () => {
   }, []);
   console.log(categories);
   return (
+    <>
     <div style={{ backgroundColor: "#DFF6FF", padding: "25px" }}>
       <Container sx={{ mt: 11 }}>
         <Typography
@@ -45,8 +47,10 @@ const Find = () => {
           )}
         </Grid>
       </Container>
+     
     </div>
-  );
+     <Footer></Footer>
+     </>  );
 };
 
 export default Find;

@@ -1,14 +1,15 @@
+import { Box, Typography } from "@mui/material";
 import React from "react";
 
 const Footer = () => {
   return (
-    <div
+    <Box
       style={{ backgroundColor: "#09344dc2", color: "white" }}
     >
-      <div className="container-fluid px-5">
-        <div className="row py-5">
+      <Box className="container-fluid px-5">
+        <Box className="row py-5">
           <div className="col-sm-12 col-md-6 col-lg-3  text-center text-lg-start">
-            <h1 className="fw-bold text-danger">We Hire</h1>
+            <h1 className="fw-bold text-danger">Vara Koto</h1>
             <p className="lh-lg fw-light">
             বাসা ভাড়া দেওয়া এবং বাসা ভাড়া খোঁজার একটি ডিজিটাল প্লাটফর্ম। 
             </p>
@@ -41,17 +42,17 @@ const Footer = () => {
 
           <div className="col-sm-12 col-md-6 col-lg-3 ">
             <img
-              className="img-fluid"
+              className="img-fluid w-75 "
               src="https://www.nicepng.com/png/full/87-870350_credit-cards-all-credit-card-logos.png"
               alt=""
             />
           </div>
-        </div>
-      </div>
-      <div className=" container border-top text-center ">
-        <p className="p-3 ">© 2022 we hire, All Rights Reserved</p>
-      </div>
-    </div>
+        </Box>
+      </Box>
+      <Box className=" container border-top text-center ">
+        <Typography  className="p-2 ">© 2022 Vara Koto, All Rights Reserved</Typography>
+      </Box>
+    </Box>
   );
 };
 

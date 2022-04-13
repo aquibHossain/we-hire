@@ -14,6 +14,7 @@ import SendIcon from "@mui/icons-material/Send";
 import useAuth from "../../hook/useAuth";
 import './AddREnt.css'
 import FileBase64 from 'react-file-base64';
+import Footer from "../../Footer/Footer";
 
 const AddRent = () => {
   const options = [
@@ -105,10 +106,10 @@ const AddRent = () => {
   const appointmentBg={
     background:`url("https://i.ibb.co/njv6CD6/wallpaperflare-com-wallpaper-1.jpg")`,
     backgroundRepeat:"no-repeat",
-    backgroundSize:"cover",
-    
+    backgroundSize:"cover",   
 }
   return (
+    <>
     <div style={appointmentBg}>
       <Container sx={{p:9}}>
         <Typography
@@ -225,9 +226,10 @@ const AddRent = () => {
               </TextField>
               <br />
               <TextField
-                sx={{ width: "50%", mb: 3 }}
+                sx={{ width: "50%",me:3, mb: 3 }}
                 onChange={locationRef}
                 id="standa"
+                required
                 label="Location"
                 variant="standard"
               />
@@ -269,6 +271,8 @@ const AddRent = () => {
         </form>
       </Container>
     </div>
+  <Footer></Footer>
+    </>
   );
 };
 

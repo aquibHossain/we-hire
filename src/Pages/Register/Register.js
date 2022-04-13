@@ -1,6 +1,7 @@
 import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { NavLink ,useHistory} from 'react-router-dom';
+import Footer from '../../Footer/Footer';
 import useAuth from '../../hook/useAuth';
 
 const Register = () => {
@@ -17,7 +18,7 @@ const Register = () => {
        
     }
     const handleSubmit=e=>{ 
-      if(loginData.password!=loginData.password2){
+      if(loginData.password!==loginData.password2){
         alert("Password didn't match")
         return
     }
@@ -25,10 +26,11 @@ const Register = () => {
         e.preventDefault()
     }
     return (
-        <Container sx={{mt:11,height:'100vh'}}>
+      <div>
+        <Container sx={{mt:11,mb:3}}>
         <Grid container spacing={2}>
         <Grid item xs={12} sm={6} md={6} >
-    <img src='https://i.ibb.co/jhhf7Rx/house-rent-17281880.jpg' style={{width:"100%",height:"100%"}} alt="" />
+    <img className='img-fluid' src='https://i.ibb.co/jhhf7Rx/house-rent-17281880.jpg' style={{width:"100%",height:"100%"}} alt="" />
     </Grid>
     <Grid item xs={12} sm={6} md={6} sx={{mt:3}}>
     <Typography style={{color:"#2b7377",fontWeight:'bolder'}}  variant='h2' gutterBottom> Register</Typography>
@@ -82,6 +84,8 @@ const Register = () => {
     </Grid>
   </Grid>
     </Container>
+    <Footer></Footer>
+    </div>
     );
 };
 

@@ -44,6 +44,7 @@ const MakeAdmin = () => {
         <Button
           type="submit"
           variant="contained"
+          className="mt-2"
           style={{ backgroundColor: "#5CE7ED" }}
         >
           Submit

@@ -1,0 +1,11 @@
+.avator{
+    position:absolute!important;
+    top: 148px;
+    left: 20px;
+    width: 65px!important;
+    height: 65px!important;
+}
+
+.searchlist:hover{
+    transform: scale(1.1);
+}

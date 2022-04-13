@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid';
 import { CircularProgress, Container, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import SearchList from '../Pages/SearchList/SearchList';
+import Footer from '../Footer/Footer';
 
 
 const SearchCategory = () => {
@@ -15,6 +16,7 @@ const SearchCategory = () => {
      .then(data=>setCategories(data))
     },[])
     return (
+        <>
         <div style={{backgroundColor:'#DFF6FF',padding:'25px'}}>
              <Container sx={{mt:11}}>
              <Typography variant='h4' className='shadow-lg bg-white py-2' sx={{my:10,color:"#2b7377",fontWeight:'bold'}}>Search Result:{categories.length}</Typography>
@@ -26,6 +28,8 @@ const SearchCategory = () => {
 </Grid>
 </Container>
         </div>
+        <Footer></Footer>
+        </>
     );
 };
 

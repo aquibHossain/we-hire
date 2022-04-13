@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -57,9 +57,36 @@ const NavBar = () => {
         logOutUser()
       }
     }
+    const [colorChange, setColorchange] = useState(false);
+  const changeNavbarColor = () =>{
+    if(window.location.pathname ===('/home')){
+      if(window.scrollY <= 100){
+        setColorchange(true);
+      }
+      else{
+        setColorchange(false);
+      }
+    }
+    else if(window.location.pathname ===('/')){
+      if(window.scrollY <= 100){
+        setColorchange(true);
+      }
+      else{
+        setColorchange(false);
+      }
+    }
+    else{
+      setColorchange(false);
+    }
+  };
+  window.addEventListener('scroll', changeNavbarColor);
     return (
         <div>
-             <AppBar  position="fixed" style={{backgroundColor:"#09344dc2"}}>
+             <AppBar 
+              position="fixed"
+               style={colorChange?
+              {backgroundColor:'transparent',boxShadow:'0 0 0 transparent'}:
+              {backgroundColor:"#09344dc2"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -68,7 +95,7 @@ const NavBar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            <NavLink to="/home" className='text-white text-decoration-none'>WE Hire</NavLink>
+            <NavLink to="/home" className='text-white  text-decoration-none '><span className='text-danger fw-bold fs-2'>V</span>ara <span className='text-danger fw-bold fs-2'>K</span>oto</NavLink>
           </Typography>
 
           <Box  sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -162,6 +189,7 @@ const NavBar = () => {
         </Toolbar>
       </Container>
     </AppBar>
+    
         </div>
     );
 };

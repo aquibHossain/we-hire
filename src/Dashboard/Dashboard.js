@@ -25,6 +25,7 @@ import MakeAdmin from '../Pages/AdminPart/MakeAdmin/MakeAdmin';
 import AdminRoute from '../Pages/AdminPart/AdminRoute/AdminRoute';
 import { useHistory } from 'react-router-dom';
 import TableDashboard from '../TableDashboard/TableDashboard';
+import Payment from '../Pages/Payment/Payment';
 
 const drawerWidth = 240;
 
@@ -187,6 +188,9 @@ const Dashboard = () => {
         <Switch>
         <Route exact path={path}>
           <TableDashboard></TableDashboard>
+        </Route>
+        <Route path={`${path}/payment/:id`}>            
+            <Payment></Payment>
         </Route>
         <AdminRoute path={`${path}/addcategories`}>            
             <AddCategories></AddCategories>

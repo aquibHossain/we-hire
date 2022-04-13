@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Catergory from '../Category/Catergory';
-import { Container } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 
 const Categories = () => {
   const [categories,setCategories]=useState([])
@@ -13,6 +13,7 @@ const Categories = () => {
   
     return (
    <div >
+     <Typography variant='h3' className='div' sx={{mt:15,mb:5,mx:'auto'}} style={{color:"#2b7377",fontWeight:'bold'}}>Catergories</Typography>
         <Container>
       <Grid container spacing={2} >
   {

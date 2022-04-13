@@ -1,8 +1,9 @@
 import React from 'react';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
-import { CardActionArea, Container, Grid, IconButton, ImageListItemBar, TextField, Typography } from '@mui/material';
+import { CardActionArea, Container, Grid, IconButton, ImageListItemBar } from '@mui/material';
 import { useHistory } from 'react-router-dom';
+import './Category.css'
 
 const Catergory = ({category}) => {
   const {name,url}=category
@@ -18,6 +19,7 @@ const Catergory = ({category}) => {
              <Card  onClick={()=>handleClick(name)} sx={{ width: 340,boxShadow:'6px 7px 10px gray',mb:2,mt:2 }}>
       <CardActionArea>
         <CardMedia
+        className='card'
           component="img"
           height="160"
           image={url}

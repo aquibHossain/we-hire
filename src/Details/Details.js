@@ -2,18 +2,19 @@ import { Avatar, Container, Grid, Typography } from "@mui/material";
 import dedent from "dedent";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Footer from "../Footer/Footer";
 import SearchList from "../Pages/SearchList/SearchList";
 import "./Details.css";
 const Details = () => {
-  const id = useParams();
+  const {id }= useParams();
   const [details, setdetails] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/details/${id.id}`)
+    fetch(`http://localhost:5000/details/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setdetails(data);
       });
-  }, [id.id]);
+  }, [id]);
   let [categories, setCategories] = useState([]);
 
 useEffect(()=>{
@@ -125,6 +126,7 @@ useEffect(()=>{
           </Grid>
         </Grid>
       </Container>
+      <Footer></Footer>
     </div>
   );
 };

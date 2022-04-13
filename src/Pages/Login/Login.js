@@ -1,6 +1,7 @@
 import { Alert, Button, Container, Grid, TextField, Typography } from '@mui/material';
-import React, { useReducer, useState } from 'react';
+import React, { useState } from 'react';
 import { NavLink, useLocation,useHistory } from 'react-router-dom';
+import Footer from '../../Footer/Footer';
 import useAuth from '../../hook/useAuth';
 
 const Login = () => {
@@ -21,7 +22,8 @@ const Login = () => {
         e.preventDefault()
     }
     return (
-      <Container sx={{mt:11,height:'100vh'}}>
+      <div>
+      <Container sx={{mt:11,mb:3}}>
             <Grid container spacing={2}>
         <Grid  item xs={12} sm={6} md={6} sx={{mt:6}}>
         <Typography style={{color:"#2b7377",fontWeight:'bolder'}} variant='h2' gutterBottom> Login</Typography>
@@ -56,11 +58,12 @@ const Login = () => {
         </form>
         </Grid>
         <Grid  item xs={12} sm={6} md={6} >
-        <img src='https://i.ibb.co/Jtqmp8d/Multicolored-Buildings-Decor-PNG-Clip-Art-Image.png'  style={{width:"100%",height:"100%"}} alt="" />
+        <img className='img-fluid' src='https://i.ibb.co/Jtqmp8d/Multicolored-Buildings-Decor-PNG-Clip-Art-Image.png'  style={{width:"100%",height:"100%"}} alt="" />
         </Grid>
       </Grid>
       </Container>
-        
+       <Footer></Footer>
+       </div>
     );
 };
 
