@@ -16,7 +16,7 @@ const CheckOutForm = ({price,post}) => {
 
    useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://mysterious-chamber-53519.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({price}),
@@ -82,7 +82,7 @@ const CheckOutForm = ({price,post}) => {
      created:paymentIntent.created,
      transaction:paymentIntent.client_secret.slice("_secret")[0]
     }
-    fetch(`http://localhost:5000/payment/${_id}`,{
+    fetch(`https://mysterious-chamber-53519.herokuapp.com/payment/${_id}`,{
       method:'PUT',
      headers:{
       'content-type':'application/json'

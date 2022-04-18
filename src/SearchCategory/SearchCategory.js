@@ -11,7 +11,7 @@ const SearchCategory = () => {
     console.log(category);
     const [categories,setCategories]=useState([])
     useEffect(()=>{
-      fetch(`http://localhost:5000/search/${category.category}`)
+      fetch(`https://mysterious-chamber-53519.herokuapp.com/search/${category.category}`)
       .then(res=>res.json())
      .then(data=>setCategories(data))
     },[])

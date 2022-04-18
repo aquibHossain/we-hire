@@ -16,10 +16,13 @@ import Details from './Details/Details';
 import Dashboard from './Dashboard/Dashboard';
 import SearchCategory from './SearchCategory/SearchCategory';
 import Find from './Find/Find';
+import NotFound from './Pages/NotFound/NotFound';
+
 
 
 function App() {
   return (
+    
     <div className="App">
         <AuthProvider>
         <Router>
@@ -55,6 +58,9 @@ function App() {
           <PrivateRoute path="/addrent">
             <AddRent></AddRent>
           </PrivateRoute>
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
         </Switch>
         
     </Router>

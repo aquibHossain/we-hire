@@ -14,7 +14,7 @@ const AddCategories = () => {
   const handleSubmit = (e) => {
     const newCategory = { name, url };
     console.log(newCategory);
-    fetch("http://localhost:5000/categories", {
+    fetch("https://mysterious-chamber-53519.herokuapp.com/categories", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

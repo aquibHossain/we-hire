@@ -161,7 +161,7 @@ const TableDashboard = () => {
   const [load, setLoad] = React.useState(true);
   const [updated, setUpdated] = React.useState(true);
   React.useEffect(() => {
-    fetch(`http://localhost:5000/mypost?email=${user.email}`, {
+    fetch(`https://mysterious-chamber-53519.herokuapp.com/mypost?email=${user.email}`, {
       headers: {
         authorization: `Bearer ${token}`,
       },
@@ -174,7 +174,7 @@ const TableDashboard = () => {
     console.log("Updated", updated);
   }, [updated]);
   const deletePost = (id) => {
-    fetch(`http://localhost:5000/details/${id}`, {
+    fetch(`https://mysterious-chamber-53519.herokuapp.com/details/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -220,9 +220,12 @@ const TableDashboard = () => {
                   />
                 ))
               ) : (
-                <Typography variant="h4" sx={{ textAlign: "right", p: 2 }}>
-                  No Result
+                
+                <Typography variant="h4" sx={{ textAlign: "right",color:'gray', py: 2 }}>
+                  No Post Yet
                 </Typography>
+                
+                
               )}
             </TableBody>
           </Table>

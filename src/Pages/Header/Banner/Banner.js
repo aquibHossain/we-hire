@@ -32,7 +32,10 @@ const Banner = () => {
   const [inputValue, setInputValue] = useState("");
   const [value1, setValue1] = useState(area[0]);
   const [inputValue1, setInputValue1] = useState("");
+  const [text,setText]=useState([])
   const history=useHistory();
+
+  
   const minRef = (e) => {
     setMin(e.target.value);
   };
@@ -48,19 +51,37 @@ const Banner = () => {
     history.push({pathname:'/find',state:data})
     e.preventDefault();
   };
+
+ 
+    useEffect(()=>{
+        fetch('https://mysterious-chamber-53519.herokuapp.com/addrent')
+        .then(res=>res.json())
+       .then(data=>{setText(data)})
+      },[])
   return (
     <div className="banner">
       <div className="search">
-      <form  action="" onSubmit={handleSearch}>
+      <form  onSubmit={handleSearch}>
         <Grid container spacing={2}>
             <Grid item xs={7} md={9} sm={9}>
-              <TextField
-                onChange={searchRef}
-                sx={{ width: "100%", mb: 2 }}
-                id="standard-basic"
-                label="Search"
-                variant="standard"
-              ></TextField>
+            <Autocomplete
+        freeSolo
+        sx={{ width: "100%", mb: 2 }}
+        disableClearable
+        options={text.map((option) => option.name)}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            label="Search"
+            variant="standard"
+            onChange={searchRef}
+            InputProps={{
+              ...params.InputProps,
+              type: 'search',
+            }}
+          />
+        )}
+      />
             </Grid>
             <Grid item xs={3} md={3} sm={3}>
               <Button type="submit" sx={{ width: "100%",backgroundColor:'#09344dc2' }} variant="contained">

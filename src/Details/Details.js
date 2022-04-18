@@ -9,7 +9,7 @@ const Details = () => {
   const {id }= useParams();
   const [details, setdetails] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/details/${id}`)
+    fetch(`https://mysterious-chamber-53519.herokuapp.com/details/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setdetails(data);
@@ -18,14 +18,14 @@ const Details = () => {
   let [categories, setCategories] = useState([]);
 
 useEffect(()=>{
-    fetch(`http://localhost:5000/search/${details[0]?.category}`)
+    fetch(`https://mysterious-chamber-53519.herokuapp.com/search/${details[0]?.category}`)
     .then((res) => res.json())
     .then((data) => setCategories(data.filter(cat=>cat._id!==details[0]._id)));
 },[ details[0]?._id])
   const reserve = "https://i.ibb.co/1zbBh1f/pngwing-com-1.png";
   return (
     <div>
-      <Container sx={{ mt: 11 }}>
+      <Container sx={{ mt: 11,pb:5 }}>
         <Grid container spacing={5}>
           <Grid style={{textAlign:'left'}} item xs={12} md={9} sm={8}>
             <img
@@ -34,7 +34,7 @@ useEffect(()=>{
               src={details[0]?.url || reserve}
               alt=""
             />
-            <Typography className="mt-3 " variant="h3">
+            <Typography className="mt-3 fw-bold" variant="h3">
               {details[0]?.name}
             </Typography>
 
@@ -115,11 +115,11 @@ useEffect(()=>{
               sx={{ fontFamily: "initial",mx:'auto', fontWeight: "bold", mb: 8,color:'#2b7377' }}
               className="div"
             >
-              Similar Post
+              Related Post
             </Typography>
            
             <Grid container spacing={3}>
-              {categories.slice(0,3).map((list) => (
+              {categories.slice(0,4).map((list) => (
                 <SearchList key={list._id} list={list}></SearchList>
               ))}
             </Grid>

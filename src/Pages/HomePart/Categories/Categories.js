@@ -6,11 +6,11 @@ import { Container, Typography } from '@mui/material';
 const Categories = () => {
   const [categories,setCategories]=useState([])
   useEffect(()=>{
-    fetch('http://localhost:5000/categories')
+    fetch('https://mysterious-chamber-53519.herokuapp.com/categories')
     .then(res=>res.json())
    .then(data=>setCategories(data))
   },[])
-  
+
     return (
    <div >
      <Typography variant='h3' className='div' sx={{mt:15,mb:5,mx:'auto'}} style={{color:"#2b7377",fontWeight:'bold'}}>Catergories</Typography>

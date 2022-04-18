@@ -86,7 +86,7 @@ const AddRent = () => {
       email:user.email
     };
     console.log(newCategory);
-    fetch("http://localhost:5000/addrent", {
+    fetch("https://mysterious-chamber-53519.herokuapp.com/addrent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

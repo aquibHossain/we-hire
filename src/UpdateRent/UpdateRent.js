@@ -31,7 +31,7 @@ const style = {
 const UpdateRent = ({id,handleClose,open,setUpdated}) => {
     const [result,SetResult]=useState({})
     useEffect(()=>{
-       fetch(`http://localhost:5000/details/${id}`)
+       fetch(`https://mysterious-chamber-53519.herokuapp.com/details/${id}`)
        .then(res=>res.json())
        .then(data=>SetResult(data))
     },[])
@@ -58,7 +58,7 @@ const UpdateRent = ({id,handleClose,open,setUpdated}) => {
           email:user.email
         };
         console.log(newCategory);
-        fetch(`http://localhost:5000/details/${id}`, {
+        fetch(`https://mysterious-chamber-53519.herokuapp.com/details/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

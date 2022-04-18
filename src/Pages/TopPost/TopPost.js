@@ -1,25 +1,28 @@
-import { Container, Grid, Typography } from '@mui/material';
+import { CircularProgress, Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import SearchList from '../SearchList/SearchList';
 
-const TopPost = () => {
+const TopPost = ({children}) => {
     const [search,setSearch]=useState([])
+    
     useEffect(()=>{
-        fetch('http://localhost:5000/addrent')
+        fetch('https://mysterious-chamber-53519.herokuapp.com/addrent')
         .then(res=>res.json())
-       .then(data=>setSearch(data))
-       
+       .then(data=>{setSearch(data)})
       },[])
-
+ const paidPost=search.filter(item=>item.payment?.amount)
     return (
         <div>
-             <Typography variant='h3' className='div' sx={{mt:15,mb:5,mx:'auto'}} style={{color:"#2b7377",fontWeight:'bold'}}>Top Post</Typography>
+             {children}
              <Container >
           
-      <Grid container spacing={4}  >
- {
-  search.slice(0,4).map(list=><SearchList key={list._id} list={list}></SearchList>)
-}
+      <Grid container spacing={3}  >
+      {
+  (paidPost[0])?
+  
+   paidPost.slice(0,4).map(list=><SearchList key={list._id} list={list}></SearchList>):
+  <CircularProgress className='mx-auto' />
+  }
 </Grid>
 </Container>  
         </div>

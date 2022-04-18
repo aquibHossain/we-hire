@@ -10,7 +10,7 @@ const CustomerDetails = () => {
             <Grid container spacing={4} sx={{my:10}}>
                <Grid item xs={12} md={3} sm={6} >
                <Box className='shadow-lg' sx={{backgroundColor:"#DFF6FF",p:4,height:220}}>
-               <i style={{fontSize:'3em',color:"#2b7377"}} class="fas fa-users"></i>
+               <i style={{fontSize:'3em',color:"#2b7377"}} class="fas fa-eye"></i>
                <br />
                <CountUp  
                style={{fontWeight:'bold',color:'white',fontSize:'3em'}}      

@@ -15,8 +15,8 @@ import { useHistory } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hook/useAuth';
 
-const pages = ['Home', 'Rents','Login'];
-const settings = [ 'Dashboard','Post Ad', 'Logout'];
+
+
 const NavBar = () => {
   const {user,logOutUser}=useAuth()
   const history=useHistory()
@@ -36,6 +36,11 @@ const NavBar = () => {
     const handleCloseUserMenu = () => {
       setAnchorElUser(null);
     };
+
+    const beforepages = ['Home', 'Rents','Login'];
+    const afterPages= ['Home', 'Rents'];
+    const pages = user.email?afterPages:beforepages;
+    const settings = [ 'Dashboard','Post Ad', 'Logout'];
 
     const handleClick=(name)=>{
       if(name==='Home'){
@@ -80,16 +85,17 @@ const NavBar = () => {
     }
   };
   window.addEventListener('scroll', changeNavbarColor);
+  
     return (
         <div>
              <AppBar 
               position="fixed"
-               style={colorChange?
+              style={colorChange?
               {backgroundColor:'transparent',boxShadow:'0 0 0 transparent'}:
               {backgroundColor:"#09344dc2"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
+           <Typography
             variant="h5"
             noWrap
             component="div"
@@ -128,7 +134,7 @@ const NavBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
+              {user.email && pages.map((page) => (
                 <MenuItem key={page} onClick={()=>{handleCloseNavMenu();
                 handleClick(page)}} >
                   <Typography   textAlign="center">{page}</Typography>

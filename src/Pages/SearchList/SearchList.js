@@ -13,7 +13,7 @@ const SearchList = ({list}) => {
     return (
        
             <Grid  item xs={12} md={3} sm={6}>
-             <Card className='searchlist' onClick={()=>handleClick(_id)}  sx={{borderRadius:3, maxWidth:321,boxShadow:'8px 15px 10px gray',mb:5,height:337}}>
+             <Card className='searchlist' onClick={()=>handleClick(_id)}  sx={{borderRadius:3, maxWidth:321,boxShadow:'8px 15px 10px gray',mb:3,height:337}}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -26,8 +26,8 @@ const SearchList = ({list}) => {
         </Avatar> 
         <CardContent>
        
-        <Typography  gutterBottom variant="h5"  sx={{fontWeight:'bold',mt:2}}>{name}</Typography>
-        <Typography  gutterBottom>{location}</Typography>
+        <Typography  gutterBottom variant="h5"  sx={{fontWeight:'bold',mt:2}}>{name.slice(0,15)}</Typography>
+        <Typography  gutterBottom>{location.slice(0,15)}</Typography>
         </CardContent>
         <Grid sx={{backgroundColor:'#dce9f4',px:2,py:1,margin:0}} container>
           <Grid item xs={6} md={6} sm={6}>

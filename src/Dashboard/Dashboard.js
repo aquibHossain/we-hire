@@ -26,6 +26,7 @@ import AdminRoute from '../Pages/AdminPart/AdminRoute/AdminRoute';
 import { useHistory } from 'react-router-dom';
 import TableDashboard from '../TableDashboard/TableDashboard';
 import Payment from '../Pages/Payment/Payment';
+import useAuth from '../hook/useAuth';
 
 const drawerWidth = 240;
 
@@ -95,11 +96,13 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 const Dashboard = () => {
+  const {admin}=useAuth()
     const history=useHistory()
     let { path, url } = useRouteMatch();
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
   
+    const options=admin?['Home', 'Dashboard', 'Add Categories', 'Make Admin']:['Home', 'Dashboard']
     const handleDrawerOpen = () => {
       setOpen(true);
     };
@@ -152,7 +155,8 @@ const Dashboard = () => {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Home', 'Dashboard', 'Add Categories', 'Make Admin'].map((text, index) => (
+          
+          {options.map((text, index) => (
             <ListItemButton
             onClick={()=>handleClick(text)}
               key={text}
