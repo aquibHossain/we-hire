@@ -42,9 +42,7 @@ const Banner = () => {
   const maxRef = (e) => {
     setMax(e.target.value);
   };
-  const searchRef = (e) => {
-    setSearch(e.target.value);
-  };
+
   
   const handleSearch = (e) => {
     const data={search,min,max,category:value,areas:value1}
@@ -74,7 +72,7 @@ const Banner = () => {
             {...params}
             label="Search"
             variant="standard"
-            onChange={searchRef}
+            onBlur={e=>setSearch(e.target.value)}
             InputProps={{
               ...params.InputProps,
               type: 'search',

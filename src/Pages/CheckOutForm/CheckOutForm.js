@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {loadStripe} from '@stripe/stripe-js';
-import {CardElement, Elements, useElements, useStripe} from '@stripe/react-stripe-js';
+import {CardElement,useElements, useStripe} from '@stripe/react-stripe-js';
 import './CheckOutForm.css'
 import { Alert, Button, CircularProgress } from '@mui/material';
 
@@ -15,7 +14,7 @@ const CheckOutForm = ({price,post}) => {
    const [clientSecret, setClientSecret] = useState("");
 
    useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
+  
     fetch("https://mysterious-chamber-53519.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -27,25 +26,21 @@ const CheckOutForm = ({price,post}) => {
 
 
   const handleSubmit = async (event) => {
-    // Block native form submission.
+
     event.preventDefault();
 
     if (!stripe || !elements) {
-      // Stripe.js has not loaded yet. Make sure to disable
-      // form submission until Stripe.js has loaded.
+ 
       return;
     }
 
-    // Get a reference to a mounted CardElement. Elements knows how
-    // to find your CardElement because there can only ever be one of
-    // each type of element.
     const card = elements.getElement(CardElement);
 
     if (card == null) {
       return;
     }
     setProcessing(true)
-    // Use your card Element with other Stripe.js APIs
+
     const {error, paymentMethod} = await stripe.createPaymentMethod({
       type: 'card',
       card,

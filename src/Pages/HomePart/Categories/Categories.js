@@ -15,7 +15,7 @@ const Categories = () => {
    <div >
      <Typography variant='h3' className='div' sx={{mt:15,mb:5,mx:'auto'}} style={{color:"#2b7377",fontWeight:'bold'}}>Catergories</Typography>
         <Container>
-      <Grid container spacing={2} >
+      <Grid container spacing={6} >
   {
   categories.map(category=><Catergory key={category._id} category={category}></Catergory>)
   }

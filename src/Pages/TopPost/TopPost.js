@@ -16,7 +16,7 @@ const TopPost = ({children}) => {
              {children}
              <Container >
           
-      <Grid container spacing={3}  >
+      <Grid container spacing={2}  >
       {
   (paidPost[0])?
   

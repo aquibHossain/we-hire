@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import SearchList from "../Pages/SearchList/SearchList";
 import { useLocation } from "react-router-dom";
 import Footer from "../Footer/Footer";
-import { Image } from "@mui/icons-material";
 import { Box } from "@mui/system";
 const Find = () => {
   const { state } = useLocation();

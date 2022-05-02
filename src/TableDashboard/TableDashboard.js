@@ -67,10 +67,10 @@ function Row({ row, deletePost, setUpdated }) {
         </TableCell>
         <TableCell sx={{ color: "gray" }} component="th" scope="row">
           <img
-            className="img-fluid"
-            width={"100px"}
+            width="100px"
+            height='70px'
             src={url || reserve}
-            alt=""
+            alt="house picture"
           />
         </TableCell>
         <TableCell sx={{ color: "gray" }} component="th" scope="row">

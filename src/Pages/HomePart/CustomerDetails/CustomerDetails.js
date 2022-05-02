@@ -10,7 +10,7 @@ const CustomerDetails = () => {
             <Grid container spacing={4} sx={{my:10}}>
                <Grid item xs={12} md={3} sm={6} >
                <Box className='shadow-lg' sx={{backgroundColor:"#DFF6FF",p:4,height:220}}>
-               <i style={{fontSize:'3em',color:"#2b7377"}} class="fas fa-eye"></i>
+               <i style={{fontSize:'3em',color:"#2b7377"}} className="fas fa-eye"></i>
                <br />
                <CountUp  
                style={{fontWeight:'bold',color:'white',fontSize:'3em'}}      
@@ -25,7 +25,7 @@ const CustomerDetails = () => {
                <Grid 
                item xs={12} md={3} sm={6} >
                     <Box className='shadow-lg' sx={{backgroundColor:"#c2ebfb",p:4,height:220}}>
-                  <i style={{fontSize:'3em',color:"#2b7377"}} class="fas fa-users"></i>
+                  <i style={{fontSize:'3em',color:"#2b7377"}} className="fas fa-users"></i>
                    <br />
                <CountUp
                 style={{fontWeight:'bold',color:'white',fontSize:'3em'}} 
@@ -38,7 +38,7 @@ const CustomerDetails = () => {
                </Grid>
                <Grid item xs={12} md={3} sm={6} >
                <Box className='shadow-lg' sx={{backgroundColor:"#DFF6FF",p:4,height:220}}>
-               <i style={{fontSize:'3em',color:"#2b7377"}} class="fa-solid fa-house"></i>
+               <i style={{fontSize:'3em',color:"#2b7377"}} className="fa-solid fa-house"></i>
                <br />
                <CountUp   
                style={{fontWeight:'bold',color:'white',fontSize:'3em'}}  
@@ -51,7 +51,7 @@ const CustomerDetails = () => {
                </Grid>
                <Grid item xs={12} md={3} sm={6}>
                <Box className='shadow-lg' sx={{backgroundColor:"#c2ebfb",p:4,height:220}}>
-               <i style={{fontSize:'3em',color:"#2b7377"}} class="fa-solid fa-comment-dots"></i>
+               <i style={{fontSize:'3em',color:"#2b7377"}} className="fa-solid fa-comment-dots"></i>
                <br />
                <CountUp
                 style={{fontWeight:'bold',color:'white',fontSize:'3em'}} 

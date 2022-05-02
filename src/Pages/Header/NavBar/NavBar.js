@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -87,7 +87,6 @@ const NavBar = () => {
   window.addEventListener('scroll', changeNavbarColor);
   
     return (
-        <div>
              <AppBar 
               position="fixed"
               style={colorChange?
@@ -195,8 +194,6 @@ const NavBar = () => {
         </Toolbar>
       </Container>
     </AppBar>
-    
-        </div>
     );
 };
 

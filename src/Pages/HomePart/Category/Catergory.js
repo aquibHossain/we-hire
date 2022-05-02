@@ -1,27 +1,24 @@
 import React from 'react';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
-import { CardActionArea, Container, Grid, IconButton, ImageListItemBar } from '@mui/material';
+import { CardActionArea,Grid, IconButton, ImageListItemBar } from '@mui/material';
 import { useHistory } from 'react-router-dom';
 import './Category.css'
 
 const Catergory = ({category}) => {
   const {name,url}=category
-  console.log(name,url);
   const history=useHistory()
   const handleClick=(name)=>{
    history.push(`/search/${name}`)
   }
     return (
-        <div>
              <Grid item xs={12} md={4} sm={6}  >
-               <Container>
-             <Card  onClick={()=>handleClick(name)} sx={{ width: 340,boxShadow:'6px 7px 10px gray',mb:2,mt:2 }}>
+             <Card  onClick={()=>handleClick(name)} sx={{ boxShadow:'6px 7px 10px gray'}}>
       <CardActionArea>
         <CardMedia
         className='card'
           component="img"
-          height="160"
+          height="180"
           image={url}
           alt={name}
           title={name}
@@ -38,10 +35,8 @@ const Catergory = ({category}) => {
           />
       </CardActionArea>
     </Card>
-    </Container>
     </Grid>
-    
-        </div>
+
     );
 };
 
