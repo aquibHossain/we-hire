@@ -27,7 +27,7 @@ const area = [
 const Banner = () => {
   const [search, setSearch] = useState("");
   const [min, setMin] = useState(0);
-  const [max, setMax] = useState(99999);
+  const [max, setMax] = useState(999999999999999);
   const [value, setValue] = useState(options[0]);
   const [inputValue, setInputValue] = useState("");
   const [value1, setValue1] = useState(area[0]);

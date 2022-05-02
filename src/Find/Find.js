@@ -19,7 +19,6 @@ const Find = () => {
         setLoad(false);
       });
   }, []);
-  console.log(categories);
   return (
     <>
     <Box sx={{ backgroundColor: "#DFF6FF",py:4,px:2 }}>
