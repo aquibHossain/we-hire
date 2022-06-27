@@ -133,7 +133,7 @@ const NavBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {user.email && pages.map((page) => (
+              { pages.map((page) => (
                 <MenuItem key={page} onClick={()=>{handleCloseNavMenu();
                 handleClick(page)}} >
                   <Typography   textAlign="center">{page}</Typography>

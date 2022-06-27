@@ -119,7 +119,8 @@ const useFirebase=()=>{
            error,
            isLoading,
            token,
-          admin  
+          admin  ,
+          setError
          }
 }
 export default useFirebase

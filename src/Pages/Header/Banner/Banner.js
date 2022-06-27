@@ -58,6 +58,7 @@ const Banner = () => {
       },[])
   return (
     <div className="banner">
+    
       <div className="search">
       <form  onSubmit={handleSearch}>
         <Grid container spacing={2}>

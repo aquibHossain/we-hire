@@ -8,7 +8,7 @@ const stripePromise = loadStripe("pk_test_51KiCK6HlIpHzNhGaKYyj2yJBNJNjExR3j2EbD
 
 const Payment = () => {
     const {id}=useParams()
-    const price=100
+    const price=100/90;
     const [post,setPost]=useState({})
     useEffect(()=>{
       fetch(`https://mysterious-chamber-53519.herokuapp.com/details/${id}`)

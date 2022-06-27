@@ -24,7 +24,8 @@ const About = () => {
  <Grid container spacing={2} sx={{p:2}}>
    <Grid item xs={12} md={6}>
      <img
-     style={{width:'25em',marginTop:"-125px"}}
+     className='img-fluid w-75'
+     style={{marginTop:"-125px"}}
      src="https://i.ibb.co/f0mS9yv/men.png"/>
    </Grid>
    <Grid item xs={12} md={6}

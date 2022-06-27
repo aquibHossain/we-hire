@@ -1,11 +1,11 @@
 import { Alert, Button, Container, Grid, TextField, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink, useLocation,useHistory } from 'react-router-dom';
 import Footer from '../../Footer/Footer';
 import useAuth from '../../hook/useAuth';
 
 const Login = () => {
-  const {signInGoogle,signInUser,user,error}=useAuth()
+  const {signInGoogle,signInUser,user,error,setError}=useAuth()
     const [loginData,setLoginData]=useState({});
     const history=useHistory();
     const location=useLocation();
@@ -17,6 +17,13 @@ const Login = () => {
         setLoginData(newLoginData);
         
      }
+     useEffect(()=>{
+        if(error){
+          setTimeout(() => {
+            setError('')
+          }, 3000);
+        }
+     },[error])
     const handleSubmit=e=>{
       signInUser(loginData.email,loginData.password,location,history)
         e.preventDefault()

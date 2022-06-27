@@ -1,12 +1,12 @@
 import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink ,useHistory} from 'react-router-dom';
 import Footer from '../../Footer/Footer';
 import useAuth from '../../hook/useAuth';
 
 const Register = () => {
     const [loginData,setLoginData]=useState({})
-    const{ signUpUser,user,isLoading,error}=useAuth()
+    const{ signUpUser,user,isLoading,error,setError}=useAuth()
     const history=useHistory();
     const handleOnChange=e=>{
        const name=e.target.name;
@@ -17,6 +17,13 @@ const Register = () => {
        setLoginData(newLoginData);
        
     }
+    useEffect(()=>{
+      if(error){
+        setTimeout(() => {
+          setError('')
+        }, 3000);
+      }
+   },[error])
     const handleSubmit=e=>{ 
       if(loginData.password!==loginData.password2){
         alert("Password didn't match")

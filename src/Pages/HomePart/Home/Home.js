@@ -14,11 +14,9 @@ const Home = () => {
             <HeaderPart></HeaderPart>
            <Categories></Categories>
            <Description></Description>
-
            <TopPost>
            <Typography variant='h3' className='div' sx={{mt:15,mb:5,mx:'auto'}} style={{color:"#2b7377",fontWeight:'bold'}}>Top Post</Typography>
            </TopPost>
-           
            <About></About>
            <CustomerDetails></CustomerDetails>
            <Footer></Footer>
