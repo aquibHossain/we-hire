@@ -33,7 +33,7 @@ const AddCategories = () => {
   };
   return (
     <div>
-      <Typography variant="h2" className='div' sx={{ fontWeight: "bold",mx:'auto', my: 5,color:"#2b7377" }}>
+      <Typography variant="h3" className='div' sx={{ fontWeight: "bold",mx:'auto', my: 5,color:"#2b7377" }}>
         Add Categories
       </Typography>
       <form action="" onSubmit={handleSubmit}>

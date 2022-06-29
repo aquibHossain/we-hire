@@ -109,7 +109,7 @@ const CheckOutForm = ({price,post}) => {
         }}
       />
       {processing ? <CircularProgress></CircularProgress>: <Button sx={{mt:4, backgroundColor:'#09344dc2' }} variant="contained" type="submit" disabled={!stripe || success}>
-        Pay {price}
+        Pay 100
       </Button>}
     </form>
     {

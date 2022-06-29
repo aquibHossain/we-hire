@@ -196,7 +196,7 @@ const TableDashboard = () => {
           Your Posts
         </Typography>
         <TableContainer component={Paper}>
-          <Table aria-label="collapsible table">
+          <Table  aria-label="collapsible table">
             <TableHead>
               <TableRow>
                 <TableCell />

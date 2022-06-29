@@ -29,7 +29,7 @@ const MakeAdmin = () => {
   };
   return (
     <div>
-      <Typography variant="h2" className="div" sx={{ fontWeight: "bold",mx:'auto', my: 5,color:"#2b7377"  }}>
+      <Typography variant="h3" className="div" sx={{ fontWeight: "bold",mx:'auto', my: 5,color:"#2b7377"  }}>
         Make Admin
       </Typography>
       <form action="" onSubmit={handleSubmit}>

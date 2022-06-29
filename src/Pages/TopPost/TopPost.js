@@ -21,7 +21,7 @@ const TopPost = ({children}) => {
   (paidPost[0])?
   
    paidPost.slice(0,4).map(list=><SearchList key={list._id} list={list}></SearchList>):
-  <CircularProgress className='mx-auto' />
+  <CircularProgress className='mx-auto text-danger' />
   }
 </Grid>
 </Container>  
