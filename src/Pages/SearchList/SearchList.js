@@ -13,7 +13,7 @@ const SearchList = ({list}) => {
     return (
        
             <Grid  item xs={12} md={3} sm={6}>
-             <Card className='searchlist' onClick={()=>handleClick(_id)}  sx={{borderRadius:3, maxWidth:321,boxShadow:'8px 15px 10px gray',mb:3,height:337}}>
+             <Card className='searchlist' onClick={()=>handleClick(_id)}  sx={{borderRadius:3, maxWidth:321,boxShadow:'4px 14px 28px rgb(0 0 0 / 10%)',mb:3,height:337}}>
       <CardActionArea>
         <CardMedia
           component="img"

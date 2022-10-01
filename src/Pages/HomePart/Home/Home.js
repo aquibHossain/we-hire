@@ -8,6 +8,7 @@ import Categories from '../Categories/Categories';
 import CustomerDetails from '../CustomerDetails/CustomerDetails';
 import Description from '../Description/Description';
 
+
 const Home = () => {
     return (
         <div>
@@ -15,7 +16,7 @@ const Home = () => {
            <Categories></Categories>
            <Description></Description>
            <TopPost>
-           <Typography variant='h3' className='div' sx={{mt:15,mb:5,mx:'auto'}} style={{color:"#2b7377",fontWeight:'bold'}}>Top Post</Typography>
+           <Typography variant='h3' className='div' sx={{mt:9,mb:5,mx:'auto'}} style={{color:"#2b7377",fontWeight:'bold'}}>Top Post</Typography>
            </TopPost>
            <About></About>
            <CustomerDetails></CustomerDetails>

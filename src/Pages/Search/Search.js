@@ -16,7 +16,6 @@ const Search = () => {
         <>
         <Box sx={{backgroundColor:'#DFF6FF',pb:5}}>
         <Typography variant='h3' className='shadow-lg bg-white py-4' sx={{my:8,color:"#2b7377",fontWeight:'bold'}}>Rents</Typography>
-        <TopPost></TopPost>
           <Container sx={{mt:3}}>
          
       <Grid container spacing={3}>

@@ -13,7 +13,7 @@ const Categories = () => {
 
     return (
    <div >
-     <Typography variant='h3' className='div' sx={{mt:15,mb:5,mx:'auto'}} style={{color:"#2b7377",fontWeight:'bold'}}>Catergories</Typography>
+     <Typography variant='h3' className='div' sx={{mt:9,mb:5,mx:'auto'}} style={{color:"#2b7377",fontWeight:'bold'}}>Catergories</Typography>
         <Container>
       <Grid container spacing={6} >
   {

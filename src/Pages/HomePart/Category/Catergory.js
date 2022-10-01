@@ -13,10 +13,10 @@ const Catergory = ({category}) => {
   }
     return (
              <Grid item xs={12} md={4} sm={6}  >
-             <Card  onClick={()=>handleClick(name)} sx={{ boxShadow:'6px 7px 10px gray'}}>
+             <Card className='category' onClick={()=>handleClick(name)} sx={{overflow:'hidden',boxShadow:"-4px -5px 14px rgb(0 0 0 / 8%), 5px 8px 16px rgb(0 0 0 / 8%"}}>
       <CardActionArea>
         <CardMedia
-        className='card'
+        className='category-img'
           component="img"
           height="180"
           image={url}

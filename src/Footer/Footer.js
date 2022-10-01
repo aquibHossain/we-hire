@@ -13,27 +13,25 @@ const Footer = () => {
             <p className="lh-lg fw-light">
             বাসা ভাড়া দেওয়া এবং বাসা ভাড়া খোঁজার একটি ডিজিটাল প্লাটফর্ম। 
             </p>
-            <h4 className="mt-4">
-              <i className="fab fa-facebook me-3"></i>
-              <i className="fab fa-twitter me-3"></i>
-              <i className="fab fa-youtube me-3"></i>
-              <i className="fab fa-instagram "></i>
-            </h4>
+            <ul className="mt-4 social-media">
+             <li><a href="#!" target="_blank"> <i className="fab fa-facebook me-3"></i></a></li>
+             <li><a href="#!" target="_blank"><i className="fab fa-twitter me-3"></i></a></li>
+             <li><a href="#!" target="_blank"><i className="fab fa-youtube me-3"></i></a></li> 
+             <li><a href="#!" target="_blank"><i className="fab fa-instagram "></i></a></li> 
+            </ul>
           </div>
 
-          <div className="col-sm-12 col-md-6 col-lg-3 text-center ">
+          <div className="col-sm-12 col-md-6 col-lg-3">
             <h4>CONTACT US</h4>
             <p className="lh-lg fw-light">
-              No: 58 A, East Madison Street,
-              <br />
-              Baltimore,Khulna,Bangladesh.
-              <br />
-              <i className="fas fa-phone-alt"></i> +880-1982690790 <br />{" "}
-              <i className="far fa-envelope"></i> hossainaquib20@gmail.com
+            No: 58 A, East Madison Street,
+            Baltimore,Khulna,Bangladesh.
             </p>
+              <p><i className="fas fa-phone-alt"></i> +880-1982690790</p>
+              <p><i className="far fa-envelope"></i> hossainaquib20@gmail.com</p>
           </div>
 
-          <div className="col-sm-12 col-md-6 col-lg-3 text-center">
+          <div className="col-sm-12 col-md-6 col-lg-3">
             <h4>SUPPORT</h4>
             <p className="fw-light">24/7 support</p>
             <p className="fw-light">Shopify Help Center</p>
@@ -49,7 +47,7 @@ const Footer = () => {
           </div>
         </Box>
       </Box>
-      <Box className=" container border-top text-center ">
+      <Box className=" container border-top">
         <Typography  className="p-2 ">© 2022 Vara Koto, All Rights Reserved</Typography>
       </Box>
     </Box>

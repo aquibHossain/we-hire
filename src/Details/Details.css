@@ -17,15 +17,20 @@
     margin-bottom: 20px;
 }
 .div {
+    display: inline-flex;
     position: relative;
     padding-bottom: 10px;
 }
 
-.div::before {
-    content : "";
+.div:after {
+    content: '';
     position: absolute;
-    left    : 30;
-    bottom  : 0;
-    width   : 10%;
-    border-bottom: 2px solid rgb(62, 255, 245);
+    left: 0;
+    right: 0;
+    top: 100%;
+    width: 80%;
+    height: 2px;
+    background: rgb(62, 255, 245);
+    border-radius: 10px;
+    margin: 0 auto;
 }

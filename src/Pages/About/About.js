@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { Button, Typography } from '@mui/material';
+import { Button, Typography,Container} from '@mui/material';
 import { useHistory } from 'react-router-dom';
 
 const About = () => {
@@ -16,12 +16,13 @@ const About = () => {
         backgroundSize:"cover",
         backgroundPosition:"center",
         backgroundBlendMode:'darken,luminosity',
-        marginTop:175
+        marginTop:110
     }
     return (
         <div>
-        <Box style={appointmentBg} sx={{ flexGrow: 1,my:10 }}>
- <Grid container spacing={2} sx={{p:2}}>
+        <Box style={appointmentBg} sx={{ flexGrow: 1,mb:9 }}>
+<Container>
+<Grid container spacing={2} sx={{p:2}}>
    <Grid item xs={12} md={6}>
      <img
      className='img-fluid w-75'
@@ -34,19 +35,18 @@ const About = () => {
    alignItems:"center",
    textAlign:"left" }}>
  <Box>
- <Typography variant="h6" sx={{mb:5}} style={{color:'#5CE7ED'}} component="div">
+ <Typography variant="h5" sx={{mb:1}} style={{color:'#5CE7ED'}} component="div">
  আপনার বাসা ভাড়া দিতে চান?
    </Typography>
-   <Typography variant="h4" style={{color:'white'}} component="div">
+   <Typography variant="h3" style={{color:'white',lineHeight:"1.5"}} component="div">
    
 খুব সহজেই আপনার বিজ্ঞাপনটি ফ্রি পোস্ট করুন
    </Typography>
-   <Typography variant="h6" sx={{my:5}}  style={{color:'white',fontSize:14,fontWeight:300}} component="div">
-   </Typography>
-   <Button onClick={handleClick} variant='contained' style={{backgroundColor:'#5CE7ED'}}>বিজ্ঞাপন দিন</Button>
+   <Button onClick={handleClick} className="py-2 px-4 mt-5" variant='contained' style={{backgroundColor:'#5CE7ED'}}>বিজ্ঞাপন দিন</Button>
  </Box>
    </Grid>
    </Grid>
+</Container>
 </Box>
    </div>
     );
