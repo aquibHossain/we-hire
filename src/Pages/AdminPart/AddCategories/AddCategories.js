@@ -14,7 +14,7 @@ const AddCategories = () => {
   const handleSubmit = (e) => {
     const newCategory = { name, url };
     console.log(newCategory);
-    fetch("https://mysterious-chamber-53519.herokuapp.com/categories", {
+    fetch("https://we-hire-database.vercel.app/categories", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,7 +33,7 @@ const AddCategories = () => {
   };
   return (
     <div>
-      <Typography variant="h3" className='div' sx={{ fontWeight: "bold",mx:'auto', my: 5,color:"#2b7377" }}>
+      <Typography variant="h3" className='div' sx={{ fontWeight: "bold", mx: 'auto', my: 5, color: "#2b7377" }}>
         Add Categories
       </Typography>
       <form action="" onSubmit={handleSubmit}>

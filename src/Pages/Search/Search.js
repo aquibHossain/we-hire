@@ -8,7 +8,7 @@ import TopPost from "../TopPost/TopPost";
 const Search = () => {
   const [search, setSearch] = useState([]);
   useEffect(() => {
-    fetch("https://mysterious-chamber-53519.herokuapp.com/addrent")
+    fetch("https://we-hire-database.vercel.app/addrent")
       .then((res) => res.json())
       .then((data) => {
         setSearch(data);
@@ -16,7 +16,7 @@ const Search = () => {
   }, []);
   return (
     <>
-  
+
       <Box sx={{ backgroundColor: "#DFF6FF", pb: 5 }}>
         <Typography
           // #dff6ff9c

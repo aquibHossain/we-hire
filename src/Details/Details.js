@@ -6,10 +6,10 @@ import Footer from "../Footer/Footer";
 import SearchList from "../Pages/SearchList/SearchList";
 import "./Details.css";
 const Details = () => {
-  const {id }= useParams();
+  const { id } = useParams();
   const [details, setdetails] = useState({});
   useEffect(() => {
-    fetch(`https://mysterious-chamber-53519.herokuapp.com/details/${id}`)
+    fetch(`https://we-hire-database.vercel.app/details/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setdetails(data);
@@ -17,17 +17,17 @@ const Details = () => {
   }, [id]);
   let [categories, setCategories] = useState([]);
 
-useEffect(()=>{
-    fetch(`https://mysterious-chamber-53519.herokuapp.com/search/${details[0]?.category}`)
-    .then((res) => res.json())
-    .then((data) => setCategories(data.filter(cat=>cat._id!==details[0]._id)));
-},[ details[0]?._id])
+  useEffect(() => {
+    fetch(`https://we-hire-database.vercel.app/search/${details[0]?.category}`)
+      .then((res) => res.json())
+      .then((data) => setCategories(data.filter(cat => cat._id !== details[0]._id)));
+  }, [details[0]?._id])
   const reserve = "https://i.ibb.co/1zbBh1f/pngwing-com-1.png";
   return (
     <div>
-      <Container sx={{ mt: 11,pb:5 }}>
+      <Container sx={{ mt: 11, pb: 5 }}>
         <Grid container spacing={5}>
-          <Grid style={{textAlign:'left'}} item xs={12} md={9} sm={8}>
+          <Grid style={{ textAlign: 'left' }} item xs={12} md={9} sm={8}>
             <img
               width={"100%"}
               height={350}
@@ -39,10 +39,10 @@ useEffect(()=>{
             </Typography>
 
             <Typography className="my-3 ">
-            <span style={{ fontWeight: "bold" }}>Location:</span>{details[0]?.location}
+              <span style={{ fontWeight: "bold" }}>Location:</span>{details[0]?.location}
             </Typography>
             <Typography className="my-3 " >
-            <span style={{ fontWeight: "bold" }}>District:</span>{details[0]?.areas}
+              <span style={{ fontWeight: "bold" }}>District:</span>{details[0]?.areas}
             </Typography>
             <hr />
             <Typography style={{ whiteSpace: "pre-wrap" }}>{dedent(`${details[0]?.description}`)}</Typography>
@@ -112,14 +112,14 @@ useEffect(()=>{
           <Grid item xs={12} md={12} sm={12}>
             <Typography
               variant="h3"
-              sx={{ fontFamily: "initial",mx:'auto', fontWeight: "bold", mb: 8,color:'#2b7377' }}
+              sx={{ fontFamily: "initial", mx: 'auto', fontWeight: "bold", mb: 8, color: '#2b7377' }}
               className="div"
             >
               Related Post
             </Typography>
-           
+
             <Grid container spacing={3}>
-              {categories.slice(0,4).map((list) => (
+              {categories.slice(0, 4).map((list) => (
                 <SearchList key={list._id} list={list}></SearchList>
               ))}
             </Grid>

@@ -130,20 +130,20 @@ function Row({ row, deletePost, setUpdated }) {
                   />
                 </Grid>
                 <Grid item xs={4} md={4} sm={4}>
-                  {payment?<Button
+                  {payment ? <Button
                     disabled={true}
                     variant="contained"
                   >
                     Paid
-                  </Button>:
+                  </Button> :
                     <Button
-                    onClick={() => {
-                      handlePay(_id);
-                    }}
-                    variant="contained"
-                  >
-                    Pay
-                  </Button>
+                      onClick={() => {
+                        handlePay(_id);
+                      }}
+                      variant="contained"
+                    >
+                      Pay
+                    </Button>
                   }
                 </Grid>
               </Grid>
@@ -161,7 +161,7 @@ const TableDashboard = () => {
   const [load, setLoad] = React.useState(true);
   const [updated, setUpdated] = React.useState(true);
   React.useEffect(() => {
-    fetch(`https://mysterious-chamber-53519.herokuapp.com/mypost?email=${user.email}`, {
+    fetch(`https://we-hire-database.vercel.app/mypost?email=${user.email}`, {
       headers: {
         authorization: `Bearer ${token}`,
       },
@@ -174,7 +174,7 @@ const TableDashboard = () => {
     console.log("Updated", updated);
   }, [updated]);
   const deletePost = (id) => {
-    fetch(`https://mysterious-chamber-53519.herokuapp.com/details/${id}`, {
+    fetch(`https://we-hire-database.vercel.app/details/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -196,7 +196,7 @@ const TableDashboard = () => {
           Your Posts
         </Typography>
         <TableContainer component={Paper}>
-          <Table  aria-label="collapsible table">
+          <Table aria-label="collapsible table">
             <TableHead>
               <TableRow>
                 <TableCell />
@@ -220,12 +220,12 @@ const TableDashboard = () => {
                   />
                 ))
               ) : (
-                
-                <Typography variant="h4" sx={{ textAlign: "right",color:'gray', py: 2 }}>
+
+                <Typography variant="h4" sx={{ textAlign: "right", color: 'gray', py: 2 }}>
                   No Post Yet
                 </Typography>
-                
-                
+
+
               )}
             </TableBody>
           </Table>

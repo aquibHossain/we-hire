@@ -8,7 +8,7 @@ const MakeAdmin = () => {
   const { token } = useAuth();
   const handleSubmit = (e) => {
     const user = { email };
-    fetch("https://mysterious-chamber-53519.herokuapp.com/users/admin", {
+    fetch("https://we-hire-database.vercel.app/users/admin", {
       method: "PUT",
       headers: {
         authorization: `Bearer ${token}`,
@@ -22,19 +22,19 @@ const MakeAdmin = () => {
           setSuccess(true);
         }
       });
-      e.preventDefault()
+    e.preventDefault()
   };
   const emailRef = (e) => {
     setEmail(e.target.value);
   };
   return (
     <div>
-      <Typography variant="h3" className="div" sx={{ fontWeight: "bold",mx:'auto', my: 5,color:"#2b7377"  }}>
+      <Typography variant="h3" className="div" sx={{ fontWeight: "bold", mx: 'auto', my: 5, color: "#2b7377" }}>
         Make Admin
       </Typography>
       <form action="" onSubmit={handleSubmit}>
         <TextField
-        required
+          required
           sx={{ mr: 3 }}
           onChange={emailRef}
           id="standard-basic"
