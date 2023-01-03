@@ -14,7 +14,7 @@ const AddCategories = () => {
   const handleSubmit = (e) => {
     const newCategory = { name, url };
     console.log(newCategory);
-    fetch("https://we-hire-database.vercel.app/categories", {
+    fetch("https://we-hire-database.onrender.com/categories", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

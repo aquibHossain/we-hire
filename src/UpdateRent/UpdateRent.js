@@ -31,7 +31,7 @@ const style = {
 const UpdateRent = ({ id, handleClose, open, setUpdated }) => {
   const [result, SetResult] = useState({})
   useEffect(() => {
-    fetch(`https://we-hire-database.vercel.app/details/${id}`)
+    fetch(`https://we-hire-database.onrender.com/details/${id}`)
       .then(res => res.json())
       .then(data => SetResult(data))
   }, [])
@@ -58,7 +58,7 @@ const UpdateRent = ({ id, handleClose, open, setUpdated }) => {
       email: user.email
     };
     console.log(newCategory);
-    fetch(`https://we-hire-database.vercel.app/details/${id}`, {
+    fetch(`https://we-hire-database.onrender.com/details/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -52,7 +52,7 @@ const Banner = () => {
 
 
   useEffect(() => {
-    fetch('https://we-hire-database.vercel.app/addrent')
+    fetch('https://we-hire-database.onrender.com/addrent')
       .then(res => res.json())
       .then(data => { setText(data) })
   }, [])

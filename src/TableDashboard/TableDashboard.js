@@ -161,7 +161,7 @@ const TableDashboard = () => {
   const [load, setLoad] = React.useState(true);
   const [updated, setUpdated] = React.useState(true);
   React.useEffect(() => {
-    fetch(`https://we-hire-database.vercel.app/mypost?email=${user.email}`, {
+    fetch(`https://we-hire-database.onrender.com/mypost?email=${user.email}`, {
       headers: {
         authorization: `Bearer ${token}`,
       },
@@ -174,7 +174,7 @@ const TableDashboard = () => {
     console.log("Updated", updated);
   }, [updated]);
   const deletePost = (id) => {
-    fetch(`https://we-hire-database.vercel.app/details/${id}`, {
+    fetch(`https://we-hire-database.onrender.com/details/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

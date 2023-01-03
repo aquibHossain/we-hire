@@ -11,7 +11,7 @@ const Payment = () => {
   const price = 100 / 90;
   const [post, setPost] = useState({})
   useEffect(() => {
-    fetch(`https://we-hire-database.vercel.app/details/${id}`)
+    fetch(`https://we-hire-database.onrender.com/details/${id}`)
       .then(res => res.json())
       .then(data => {
         setPost(data[0])

@@ -77,7 +77,7 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName }
-    fetch('https://we-hire-database.vercel.app/users', {
+    fetch('https://we-hire-database.onrender.com/users', {
       method: method,
       headers: {
         "content-type": 'application/json'
@@ -103,7 +103,7 @@ const useFirebase = () => {
   }, [auth])
 
   useEffect(() => {
-    fetch(`https://we-hire-database.vercel.app/users/${user.email}`)
+    fetch(`https://we-hire-database.onrender.com/users/${user.email}`)
       .then(res => res.json())
       .then(data => {
         setAdmin(data.admin)

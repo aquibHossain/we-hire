@@ -8,7 +8,7 @@ const MakeAdmin = () => {
   const { token } = useAuth();
   const handleSubmit = (e) => {
     const user = { email };
-    fetch("https://we-hire-database.vercel.app/users/admin", {
+    fetch("https://we-hire-database.onrender.com/users/admin", {
       method: "PUT",
       headers: {
         authorization: `Bearer ${token}`,

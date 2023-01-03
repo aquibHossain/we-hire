@@ -8,7 +8,7 @@ import TopPost from "../TopPost/TopPost";
 const Search = () => {
   const [search, setSearch] = useState([]);
   useEffect(() => {
-    fetch("https://we-hire-database.vercel.app/addrent")
+    fetch("https://we-hire-database.onrender.com/addrent")
       .then((res) => res.json())
       .then((data) => {
         setSearch(data);

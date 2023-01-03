@@ -86,7 +86,7 @@ const AddRent = () => {
       email: user.email
     };
     console.log(newCategory);
-    fetch("https://we-hire-database.vercel.app/addrent", {
+    fetch("https://we-hire-database.onrender.com/addrent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

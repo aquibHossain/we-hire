@@ -11,7 +11,7 @@ const Find = () => {
   const [load, setLoad] = useState(true);
   useEffect(() => {
     fetch(
-      `https://we-hire-database.vercel.app/find?search=${search}&&category=${category}&&areas=${areas}&&min=${min}&&max=${max}`
+      `https://we-hire-database.onrender.com/find?search=${search}&&category=${category}&&areas=${areas}&&min=${min}&&max=${max}`
     )
       .then((res) => res.json())
       .then((data) => {

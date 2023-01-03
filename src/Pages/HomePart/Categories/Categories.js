@@ -6,9 +6,10 @@ import { CircularProgress, Container, Typography } from '@mui/material';
 const Categories = () => {
   const [categories, setCategories] = useState([])
   useEffect(() => {
-    fetch('https://we-hire-database.vercel.app/categories')
+    fetch('https://we-hire-database.onrender.com/categories')
       .then(res => res.json())
-      .then(data => setCategories(data))
+      .then(data => { setCategories(data); console.log(data, "data plus") })
+
   }, [])
 
   return (

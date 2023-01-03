@@ -9,7 +9,7 @@ const Details = () => {
   const { id } = useParams();
   const [details, setdetails] = useState({});
   useEffect(() => {
-    fetch(`https://we-hire-database.vercel.app/details/${id}`)
+    fetch(`https://we-hire-database.onrender.com/details/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setdetails(data);
@@ -18,7 +18,7 @@ const Details = () => {
   let [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch(`https://we-hire-database.vercel.app/search/${details[0]?.category}`)
+    fetch(`https://we-hire-database.onrender.com/search/${details[0]?.category}`)
       .then((res) => res.json())
       .then((data) => setCategories(data.filter(cat => cat._id !== details[0]._id)));
   }, [details[0]?._id])

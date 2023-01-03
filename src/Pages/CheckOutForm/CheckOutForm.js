@@ -15,7 +15,7 @@ const CheckOutForm = ({ price, post }) => {
 
   useEffect(() => {
 
-    fetch("https://we-hire-database.vercel.app/create-payment-intent", {
+    fetch("https://we-hire-database.onrender.com/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ price }),
@@ -77,7 +77,7 @@ const CheckOutForm = ({ price, post }) => {
         created: paymentIntent.created,
         transaction: paymentIntent.client_secret.slice("_secret")[0]
       }
-      fetch(`https://we-hire-database.vercel.app/payment/${_id}`, {
+      fetch(`https://we-hire-database.onrender.com/payment/${_id}`, {
         method: 'PUT',
         headers: {
           'content-type': 'application/json'

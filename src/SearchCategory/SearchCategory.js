@@ -11,7 +11,7 @@ const SearchCategory = () => {
     console.log(category);
     const [categories, setCategories] = useState([])
     useEffect(() => {
-        fetch(`https://we-hire-database.vercel.app/search/${category.category}`)
+        fetch(`https://we-hire-database.onrender.com/search/${category.category}`)
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
